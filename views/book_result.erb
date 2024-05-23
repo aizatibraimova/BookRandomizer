@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Book Result</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container mt-10">
+    <div class="card text-center">
+      <div class="card-body">
+        <h1 class="card-title">What should I read?</h1>
+        <p class="card-text"><strong>Title:</strong> <%= @book_details[:title] %></p>
+        <p class="card-text"><strong>Author:</strong> <%= @book_details[:author] %></p>
+        <p class="card-text"><strong>Pages:</strong> <%= @book_details[:pages] %></p>
+        <p class="card-text"><strong>Cover:</strong>
+          <% if @book_details[:cover_id] %>
+            <img src="https://covers.openlibrary.org/b/id/<%= @book_details[:cover_id] %>-L.jpg" class="img-fluid img-thumbnail" alt="<%= @book_details[:title] %> cover">
+          <% else %>
+            No cover available
+          <% end %>
+        </p>
+        <p class="card-text"><strong>First sentence:</strong> <%= @book_details[:summary] || 'No summary available' %></p>
+        <a href="/" class="btn btn-secondary">Fetch Another Book</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
