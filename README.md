@@ -1,18 +1,9 @@
-# sinatra-template
+#Random Book Generator App
 
-Use this repository to create new Sinatra apps. 
+This is a simple web application built with Ruby on Sinatra framework that generates random book recommendations using the Open Library API.
 
-Optionally, to use `ActiveRecord` for database operations, add to the `app.rb`:
 
-```ruby
-require "sinatra/activerecord"
-```
+#Usage
 
-And in the `config/environment.rb` file add this code block:
-
-```ruby
-configure do
-  # setup a database connection
-  set(:database, { adapter: "sqlite3", database: "db/development.sqlite3" })
-end
-```
+Click on the "Fetch a Random Book" button to generate a random book recommendation.
+The app will display the title, author, number of pages, book cover (if available), and a quick summary of the book.
